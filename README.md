@@ -1,1 +1,0 @@
-# aryanator.github.io
