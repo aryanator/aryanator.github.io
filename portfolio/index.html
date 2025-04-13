@@ -1,76 +1,165 @@
-content is top notch
-but not satisfied with the aesthetics
-make it completely jawdropping please
-like the best portfolio to exists
-
-batman theme. add icons images from free sources directly wihtout needing to download
-make it sexy
-don't harm the content but make it look like batmen's coraporate and add relevent images, effects, animations, etc
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aryan Patil – Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+        integrity="sha512-Fo3rlrZj/k7ujTnH/PRZcWyTvQbH43g5pr1oW3I6PdRh3Mqv3lt4W0Ov9dZw4Q5x5ji7MCpZ1Kf4Zz+CoPp5DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto+Mono&display=swap');
+    /* Global Styles and Fonts */
     body {
-      background-color: #0a0a0a;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
       color: #f0f0f0;
       font-family: 'Roboto Mono', monospace;
       line-height: 1.6;
-      margin: 0;
-      padding: 0;
+      overflow-x: hidden;
     }
+    
+    /* Container setup */
     .container {
       max-width: 960px;
-      margin: auto;
+      margin: 0 auto;
       padding: 2rem;
     }
+    
+    /* Section and Headings */
     section {
       padding: 2rem 0;
       border-bottom: 2px dashed #333;
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards;
+      /* Stagger each section */
+      animation-delay: var(--delay, 0s);
     }
+    
     h1, h2, h3 {
       color: #ffc107;
       font-family: 'Orbitron', sans-serif;
+      margin-bottom: 1rem;
     }
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+    }
+    
+    /* Bat Signal in Header */
+    .bat-signal {
+      width: 80px;
+      height: auto;
+      margin-right: 1rem;
+      vertical-align: middle;
+      animation: pulseGlow 2s infinite;
+    }
+    
+    /* Link and Icon Styling */
     a {
       color: #00fff7;
       text-decoration: none;
+      transition: transform 0.2s ease-in-out;
     }
     a:hover {
+      transform: scale(1.05);
       text-decoration: underline;
     }
+    .social-icons i {
+      margin-right: 0.5rem;
+    }
+    
     .highlight {
       color: #ffc107;
       font-weight: bold;
     }
+    
+    /* Card Design */
     .card {
       background-color: #1c1c1c;
       padding: 1rem;
       border-radius: 10px;
       margin-top: 1rem;
       box-shadow: 0 0 10px #00fff7;
+      transition: box-shadow 0.3s ease;
     }
+    .card:hover {
+      box-shadow: 0 0 20px #00fff7;
+    }
+    
+    /* Blockquote custom style */
+    blockquote {
+      border-left: 5px solid #ffc107;
+      padding-left: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+    
+    /* Responsive image styles (if any embedded later) */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Fade in & slide up animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Pulse glowing effect for bat signal */
+    @keyframes pulseGlow {
+      0%, 100% { filter: drop-shadow(0 0 6px #ffc107); }
+      50% { filter: drop-shadow(0 0 12px #ffc107); }
+    }
+    
+    /* Apply a slight stagger to each section */
+    .container section:nth-of-type(1) { --delay: 0.2s; }
+    .container section:nth-of-type(2) { --delay: 0.4s; }
+    .container section:nth-of-type(3) { --delay: 0.6s; }
+    .container section:nth-of-type(4) { --delay: 0.8s; }
+    .container section:nth-of-type(5) { --delay: 1s; }
+    .container section:nth-of-type(6) { --delay: 1.2s; }
+    .container section:nth-of-type(7) { --delay: 1.4s; }
+    .container section:nth-of-type(8) { --delay: 1.6s; }
+    .container section:nth-of-type(9) { --delay: 1.8s; }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- Hero Section with Bat Signal Icon -->
     <section>
-      <h1>The Dark Knight of Deep Learning</h1>
+      <h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Batman_Silhouette.svg/512px-Batman_Silhouette.svg.png" 
+             alt="Bat Signal" class="bat-signal" />
+        The Dark Knight of Deep Learning
+      </h1>
       <p class="highlight">Aryan Patil</p>
-      <p>
-        <a href="https://www.linkedin.com/in/aryanator/">LinkedIn</a> |
-        <a href="https://github.com/aryanator">GitHub</a> |
-        <a href="mailto:aryanator01@gmail.com">Email</a>
+      <p class="social-icons">
+        <a href="https://www.linkedin.com/in/aryanator/"><i class="fab fa-linkedin"></i>LinkedIn</a> |
+        <a href="https://github.com/aryanator"><i class="fab fa-github"></i>GitHub</a> |
+        <a href="mailto:aryanator01@gmail.com"><i class="fas fa-envelope"></i>Email</a>
       </p>
     </section>
 
+    <!-- Open Source Contributions -->
     <section>
       <h2>Open Source Contributions</h2>
       <ul>
@@ -80,6 +169,7 @@ don't harm the content but make it look like batmen's coraporate and add releven
       </ul>
     </section>
 
+    <!-- AI Agents Built -->
     <section>
       <h2>AI Agents Built</h2>
       <ul>
@@ -90,14 +180,16 @@ don't harm the content but make it look like batmen's coraporate and add releven
       </ul>
     </section>
 
+    <!-- Who is Aryan? -->
     <section>
       <h2>Who is Aryan?</h2>
-      <p>Scattered stardust that manifests to be star once again some day.</p>
+      <p>Scattered stardust that manifests to be a star once again some day.</p>
       <p>I’m a Master's student in Computer Science at Stony Brook University, specializing in Machine Learning and Artificial Intelligence.</p>
       <p>My passion lies in developing cutting-edge tools that leverage the power of ML and AI to solve complex problems.</p>
       <p>I like to write psychological thriller stories and poems, and solve complex math problems.</p>
     </section>
 
+    <!-- Background and Experience -->
     <section>
       <h2>My Background</h2>
       <h3>Education</h3>
@@ -114,14 +206,16 @@ don't harm the content but make it look like batmen's coraporate and add releven
       </ul>
     </section>
 
+    <!-- BNL Project Highlight -->
     <section>
       <h2>My Time at BNL</h2>
-      <p>Collaborated with High Energy Nuclear Physics (HENP) team at Brookhaven National Lab. Built ML models to predict outcomes of Au–Au collisions using limited data. Led the development of a Multi-Head Attention Transformer in PyTorch, cutting hundreds of hours of experiments to minutes. Enabled exploration of inaccessible physics phenomena.</p>
+      <p>Collaborated with the High Energy Nuclear Physics (HENP) team at Brookhaven National Lab. Built ML models to predict outcomes of Au–Au collisions using limited data. Led the development of a Multi-Head Attention Transformer in PyTorch, cutting hundreds of hours of experiments to minutes. Enabled exploration of inaccessible physics phenomena.</p>
     </section>
 
+    <!-- Goal & Expertise -->
     <section>
       <h2>Goal & Expertise</h2>
-      <p><strong>Goal:</strong> Build thoughtful tools to make everyone’s life easier. Long-term: create personalized AI that emulates own cognition and predicts future decisions.</p>
+      <p><strong>Goal:</strong> Build thoughtful tools to make everyone’s life easier. Long-term: create personalized AI that emulates one’s own cognition and predicts future decisions.</p>
       <h3>Expertise</h3>
       <ul>
         <li>Machine Learning, Deep Learning, Transformers</li>
@@ -130,6 +224,7 @@ don't harm the content but make it look like batmen's coraporate and add releven
       </ul>
     </section>
 
+    <!-- Latest Projects -->
     <section>
       <h2>Latest Projects</h2>
       <ul>
@@ -139,6 +234,7 @@ don't harm the content but make it look like batmen's coraporate and add releven
       </ul>
     </section>
 
+    <!-- Other Projects -->
     <section>
       <h2>Other Projects</h2>
       <ul>
@@ -149,6 +245,7 @@ don't harm the content but make it look like batmen's coraporate and add releven
       </ul>
     </section>
 
+    <!-- Additional Projects -->
     <section>
       <h2>Additional Projects</h2>
       <ul>
@@ -162,13 +259,15 @@ don't harm the content but make it look like batmen's coraporate and add releven
       </ul>
     </section>
 
+    <!-- Contact Information -->
     <section>
       <h2>Reach Out</h2>
-      <p>📍 Chapin L1174, 700 Health Science Drive, Stony Brook, NY 11790</p>
-      <p>📧 <a href="mailto:aryanator01@gmail.com">aryanator01@gmail.com</a> | <a href="mailto:arpatil@cs.stonybrook.edu">arpatil@cs.stonybrook.edu</a></p>
-      <p>📞 (934) 451 9501</p>
+      <p><i class="fas fa-map-marker-alt"></i> Chapin L1174, 700 Health Science Drive, Stony Brook, NY 11790</p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:aryanator01@gmail.com">aryanator01@gmail.com</a> | <a href="mailto:arpatil@cs.stonybrook.edu">arpatil@cs.stonybrook.edu</a></p>
+      <p><i class="fas fa-phone"></i> (934) 451 9501</p>
     </section>
 
+    <!-- Unfiltered Thought -->
     <section>
       <h2>Unfiltered Thought</h2>
       <blockquote>
