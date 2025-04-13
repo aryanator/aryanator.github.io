@@ -1,72 +1,170 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aryan Patil – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aryan Patil – AI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      background-color: #0f0f0f;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #0f0f0f;
+      color: #e6e6e6;
+      line-height: 1.6;
+      padding-bottom: 5rem;
     }
-    .section {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-    .section img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1rem;
-      z-index: 1000;
+    header {
       text-align: center;
+      padding: 4rem 1rem 2rem;
+      background: #1a1a1a;
     }
-    .nav a {
+    header h1 {
+      font-size: 3rem;
+      color: #00fff7;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .section {
+      max-width: 960px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+    h2 {
+      color: #00fff7;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 10px rgba(0,255,247,0.1);
+      transition: 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 0 25px rgba(0,255,247,0.3);
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      color: #00d8ff;
+      margin-top: 0;
+    }
+    .card a {
       color: #00fff7;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
-      transition: color 0.3s;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    footer {
+      background: #1a1a1a;
+      color: #999;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    .nav {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .nav a {
+      margin: 0 1rem;
+      color: #00fff7;
+      text-decoration: none;
     }
     .nav a:hover {
       color: #00d8ff;
     }
-    .spacer {
-      height: 60px;
-    }
   </style>
 </head>
 <body>
-  <div class="nav">
-    <a href="#github">GitHub</a>
-    <a href="#agents">AI Agents</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="spacer"></div>
-  <div class="section"><img src="Home.png" alt="Home Section" /></div>
-  <div class="section"><img src="2.png" alt="Section 2" /></div>
-  <div class="section"><img src="About.png" alt="About Section" /></div>
-  <div class="section"><img src="4.png" alt="Section 4" /></div>
-  <div class="section"><img src="Background.png" alt="Background Section" /></div>
-  <div class="section"><img src="6.png" alt="Section 6" /></div>
-  <div class="section"><img src="7.png" alt="Section 7" /></div>
-  <div class="section"><img src="8.png" alt="Section 8" /></div>
-  <div class="section"><img src="9.png" alt="Section 9" /></div>
-  <div class="section"><img src="10.png" alt="Section 10" /></div>
-  <div class="section"><img src="11.png" alt="Section 11" /></div>
-  <div class="section" id="contact"><img src="Contact.png" alt="Contact Section" /></div>
+
+  <header>
+    <h1>Aryan Patil</h1>
+    <p>AI Engineer · LLM Developer · Autonomous Agent Builder</p>
+    <div class="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I’m a Computer Science graduate student at Stony Brook University with a focus on AI, LLMs, and agentic systems. My work centers around building autonomous agents, fine-tuning large models, and deploying AI applications that work in real-time environments.</p>
+    <p>I enjoy bridging low-level optimization with practical use-cases — whether that’s token-level inference control or multi-agent orchestration across Discord, Reddit, and Web.</p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Featured Projects</h2>
+
+    <div class="card">
+      <h3>Reddit AnalyXer</h3>
+      <p>Real-time summarization tool using BART-large fine-tuned with sarcasm detection. Includes sentiment insights and visual summaries for trending posts.</p>
+      <a href="https://github.com/aryanator/Reddit-AnalyXer" target="_blank">View GitHub</a> |
+      <a href="https://reddit-analyxer.streamlit.app/" target="_blank">Launch App</a>
+    </div>
+
+    <div class="card">
+      <h3>Locality AI</h3>
+      <p>Ad-strategy engine using GPT-4o and real-time location/event/weather signals. Built with RAG, LangChain, and vector DBs for targeted brand messaging.</p>
+      <a href="https://github.com/aryanator/ai-market-intelligence" target="_blank">View GitHub</a> |
+      <a href="https://ai-market-intelligence-tool.streamlit.app/" target="_blank">Launch App</a>
+    </div>
+
+    <div class="card">
+      <h3>MediChat AI</h3>
+      <p>Healthcare assistant fine-tuned using Q-LoRA on T5 with custom data. Supports interactive health queries and symptom-based routing.</p>
+      <a href="https://github.com/aryanator/medichat-ai" target="_blank">View GitHub</a> |
+      <a href="https://ai-health-chatbot.streamlit.app/" target="_blank">Launch App</a>
+    </div>
+
+    <div class="card">
+      <h3>FIFA Sports Analytics</h3>
+      <p>Exploratory dashboard for FIFA 23 data. Includes player comparisons, radar charts, and map-based visualizations using Plotly + Streamlit.</p>
+      <a href="https://github.com/aryanator/fifa23-ai-analytics" target="_blank">View GitHub</a> |
+      <a href="https://fifa23-ai-analytics.streamlit.app/" target="_blank">Launch App</a>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div>Python</div>
+      <div>FastAPI</div>
+      <div>Streamlit</div>
+      <div>Hugging Face</div>
+      <div>RAG Pipelines</div>
+      <div>FAISS</div>
+      <div>Docker</div>
+      <div>LangChain</div>
+      <div>LLaMA / Claude</div>
+      <div>MLflow</div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:arpatil@cs.stonybrook.edu">arpatil@cs.stonybrook.edu</a></p>
+    <p>GitHub: <a href="https://github.com/aryanator" target="_blank">github.com/aryanator</a></p>
+    <p>Portfolio: <a href="https://aryanator.github.io" target="_blank">aryanator.github.io</a></p>
+  </section>
+
+  <footer>
+    © 2024 Aryan Patil · Built with 💻 and Streamlit, FastAPI, and a lot of caffeine.
+  </footer>
+
 </body>
 </html>
